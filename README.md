@@ -1,1 +1,1 @@
-# zihao_project
+# DiffuRec
