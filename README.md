@@ -21,7 +21,7 @@ Our code has been tested running under a Linux desktop with NVIDIA GeForce RTX 3
 0. Clone this repo
 
     ```
-    git clone 
+    git clone https://github.com/WHUIR/DiffuRec.git
     ```
 
 1. Download preprocessed data from this [Google Drive link](), then put them into the *dataset/data/* folder. 
