@@ -24,8 +24,10 @@ Our code has been tested running under a Linux desktop with NVIDIA GeForce RTX 3
     git clone https://github.com/WHUIR/DiffuRec.git
     ```
 
-1. Download preprocessed data from this [Google Drive link](), then put them into the *dataset/data/* folder. 
-
+2. You can run the below command for model training and evaluation.
+    ```
+    
+    ```
 
 ## Citation
 Please cite the following paper corresponding to the repository:
@@ -38,6 +40,6 @@ Please cite the following paper corresponding to the repository:
 }
 ```
 
-## Acknowledgement
+## Acknowledgements
 
-
+[TimiRec](https://github.com/THUwangcy/ReChorus/tree/CIKM22), [SVAE](https://github.com/noveens/svae_cf), [ACVAE](https://github.com/ACVAE/ACVAE-PyTorch) and [STOSA](https://github.com/zfan20/STOSA).
