@@ -13,8 +13,18 @@ Mainstream solutions to Sequential Recommendation (SR) represent items with fixe
 - Python 3.8.11
 - PyTorch 1.8.0
 - numpy 1.23.4
+  
 Our code has been tested running under a Linux desktop with NVIDIA GeForce RTX 3090 GPU and Intel Xeon CPU E5-2680 v3. 
 
+## Usage
+
+0. Clone this repo
+
+    ```
+    git clone 
+    ```
+
+1. Download preprocessed data from this [Google Drive link](), then put them into the *dataset/data/* folder. 
 
 
 ## Citation
