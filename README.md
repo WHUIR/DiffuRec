@@ -26,7 +26,7 @@ Our code has been tested running under a Linux desktop with NVIDIA GeForce RTX 3
 
 2. You can run the below command for model training and evaluation.
     ```
-    
+    python main.py --dataset amazon_beauty
     ```
 
 ## Citation
