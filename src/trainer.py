@@ -120,7 +120,7 @@ def model_train(tra_data_loader, val_data_loader, test_data_loader, model_joint,
                     val_batch = [x.to(device) for x in val_batch]
                     scores_rec, rep_diffu, _, _, _, _ = model_joint(val_batch[0], val_batch[1], train_flag=False)
                     scores_rec_diffu = model_joint.diffu_rep_pre(rep_diffu)    ### inner_production
-                    # scores_rec_diffu = model_joint.knn_rep_pre(rep_diffu)   ### KNN
+                    # scores_rec_diffu = model_joint.routing_rep_pre(rep_diffu)   ### routing_rep_pre
                     metrics = hrs_and_ndcgs_k(scores_rec_diffu, val_batch[1], metric_ks)
                     for k, v in metrics.items():
                         metrics_dict[k].append(v)
@@ -160,7 +160,7 @@ def model_train(tra_data_loader, val_data_loader, test_data_loader, model_joint,
             test_batch = [x.to(device) for x in test_batch]
             scores_rec, rep_diffu, _, _, _, _ = best_model(test_batch[0], test_batch[1], train_flag=False)
             scores_rec_diffu = best_model.diffu_rep_pre(rep_diffu)   ### Inner Production
-            # scores_rec_diffu = best_model.knn_rep_pre(rep_diffu)   ### KNN
+            # scores_rec_diffu = best_model.routing_rep_pre(rep_diffu)   ### routing
             
             _, indices = torch.topk(scores_rec_diffu, k=100)
             top_100_item.append(indices)
