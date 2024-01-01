@@ -82,7 +82,7 @@ class Att_Diffuse_model(nn.Module):
         rep_gt = self.item_embeddings(labels).squeeze(1)
         return torch.sqrt(self.loss_mse(rep_gt, rep_diffu))
     
-    def knn_rep_pre(self, rep_diffu):
+    def routing_rep_pre(self, rep_diffu):
         item_norm = (self.item_embeddings.weight**2).sum(-1).view(-1, 1)  ## N x 1
         rep_norm = (rep_diffu**2).sum(-1).view(-1, 1)  ## B x 1
         sim = torch.matmul(rep_diffu, self.item_embeddings.weight.t())  ## B x N
