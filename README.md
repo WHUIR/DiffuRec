@@ -1,11 +1,11 @@
 # DiffuRec
 
-This is a PyTorch implementation for our [DiffuRec](https://arxiv.org/abs/2304.00686) paper:
+This is a PyTorch implementation of our [DiffuRec](https://arxiv.org/abs/2304.00686) paper:
 
 > Zihao Li, Aixin Sun, and Chenliang Li. 2023. DiffuRec: A Diffusion Model for Sequential Recommendation. ACM Trans. Inf. Syst. 42, 3, Article 66 (May 2024), 28 pages. https://doi.org/10.1145/3631116
 
 ## Overview
-Mainstream solutions to Sequential Recommendation (SR) represent items with fixed vectors. These vectors have limited capability in capturing items’ latent aspects and users' diverse preferences. As a new generative paradigm, Diffusion models have achieved excellent performance in areas like computer vision and natural language processing. To our understanding, its unique merit in representation generation well fits the problem setting of sequential recommendation. In this paper, we make the very first attempt to adapt Diffusion model to SR and propose DiffuRec, for item representation construction and uncertainty injection. Rather than modeling item representations as fixed vectors, we represent them as distributions in DiffuRec, which reflect user's multiple interests and item's various aspects adaptively. In diffusion phase, DiffuRec corrupts the target item embedding into a Gaussian distribution via noise adding, which is further applied for sequential item distribution representation generation and uncertainty injection. Afterward, the item representation is fed into an Approximator for target item representation reconstruction. In reverse phase, based on user's historical interaction behaviors, we reverse a Gaussian noise into the target item representation, then apply a rounding operation for target item prediction. Experiments over four datasets show that DiffuRec outperforms strong baselines by a large margin.
+Mainstream solutions to Sequential Recommendation (SR) represent items with fixed vectors. These vectors have limited capability in capturing items’ latent aspects and users' diverse preferences. As a new generative paradigm, Diffusion models have achieved excellent performance in areas like computer vision and natural language processing. To our understanding, their unique merit in representation generation fits well with the problem setting of sequential recommendation. In this paper, we make the very first attempt to adapt diffusion models to SR and propose DiffuRec for item representation construction and uncertainty injection. Rather than modeling item representations as fixed vectors, we represent them as distributions in DiffuRec, which reflect users' multiple interests and items' various aspects adaptively. In the diffusion phase, DiffuRec corrupts the target item embedding into a Gaussian distribution via noise addition, which is further applied for sequential item distribution representation generation and uncertainty injection. Afterward, the item representation is fed into an Approximator for target item representation reconstruction. In the reverse phase, based on the user's historical interaction behaviors, we reverse a Gaussian noise into the target item representation, then apply a rounding operation for target item prediction. Experiments over four datasets show that DiffuRec outperforms strong baselines by a large margin.
 
 ![Diffurec](asset/diffurec_framework.png)
 
@@ -14,7 +14,7 @@ Mainstream solutions to Sequential Recommendation (SR) represent items with fixe
 - PyTorch 1.8.0
 - numpy 1.23.4
   
-Our code has been tested running under a Linux desktop with NVIDIA GeForce RTX 3090 GPU and Intel Xeon CPU E5-2680 v3. 
+Our code has been tested running on a Linux desktop with an NVIDIA GeForce RTX 3090 GPU and an Intel Xeon CPU E5-2680 v3. 
 
 ## Usage
 
@@ -24,7 +24,7 @@ Our code has been tested running under a Linux desktop with NVIDIA GeForce RTX 3
     git clone https://github.com/WHUIR/DiffuRec.git
     ```
 
-2. You can run the below command for model training and evaluation.
+2. You can run the command below for model training and evaluation.
     ```
     python main.py --dataset amazon_beauty
     ```
